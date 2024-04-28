@@ -1,0 +1,21 @@
+version: '3'
+services:
+  shifts-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      BOT_TOKEN: "<your_bot_token>"
+      COMMANDERS: "<commander1>,<commander2>,..."
+      SHEET_URL: "<url_to_your_sheet>"
+      SERVICE_ACCOUNT_JSON: "path/to/permission_json_file"
+      DEV_CHANNEL_ID: "<development_channel_id>"
+      MAIN_CHANNEL_ID: "<main_channel_id>"
+      RELEASES_SHEET_NAME: "<releases_tab_name>"
+      TEAMS_SHEET_NAME: "<teams_tab_name>"
+      PERSONS_SHEET_NAME: "<persons_tab_name>"
+      TASKS_SHEET_NAMES: "<first_tasks_tab_name>,<second_tasks_tab_name>,...."
+      DEVELOPERS: "<developer_telegram_account_id>"

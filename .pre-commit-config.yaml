@@ -1,0 +1,48 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: (^tests/resources)
+      - id: end-of-file-fixer
+        exclude: (^tests/resources)
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+        exclude: (^tests/resources)
+      - id: check-toml
+        exclude: (^tests/resources)
+      - id: check-byte-order-marker
+        exclude: (^tests/resources)
+  - repo: https://github.com/IamTheFij/docker-pre-commit
+    rev: v2.1.0
+    hooks:
+      - id: docker-compose-check
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        exclude: ^tests/resources
+  - repo: https://github.com/psf/black
+    rev: 22.6.0
+    hooks:
+      - id: black
+        exclude: ^tests/resources
+  - repo: https://github.com/pycqa/flake8
+    rev: 4.0.1
+    hooks:
+      - id: flake8
+        exclude: ^tests/resources
+        additional_dependencies: [flake8-bugbear]
+        args:
+          [
+            --max-complexity=8,
+            --max-line-length=120,
+            "--select=C,E,F,W,B,B9",
+            "--ignore=E226,B950,Q001,W504,W503",
+          ]
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.10.0
+    hooks:
+      - id: hadolint-docker

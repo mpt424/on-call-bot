@@ -1,0 +1,17 @@
+*.egg-info
+.pytest_cache
+.idea
+.eggs
+__pycache__
+*.py[oc]
+.vscode/
+.coverage
+coverage.xml
+tests.xml
+.cache/
+dist/
+*:Zone.Identifier
+.DS_Store
+*.dev
+*.json
+*.xlsx
