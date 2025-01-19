@@ -2,7 +2,7 @@
 
 This Telegram bot facilitates shift management for teams by allowing users to report their exit/return, view shift schedules, change shifts with other team members, and check who is currently on shift. Additionally, commanders have the ability to view who is currently out or not on shift.
 
-have fun!!!
+have fun!!! :)
 
 ## Features
 
